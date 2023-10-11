@@ -12,27 +12,18 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    private let user = "User"
-    private let password = "Password"
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        usernameTextField.autocorrectionType = .no
-        usernameTextField.autocapitalizationType = .none
-        passwordTextField.autocorrectionType = .no
-        passwordTextField.autocapitalizationType = .none
-        passwordTextField.isSecureTextEntry = true
-    }
+    //private let user = "User"
+    //private let password = "Password"
+    var currentUser: User?
+    let user = User(login: "User", password: "Password")
+    let creator = Creator(name: "John Doe", age: 66, company: "Limited Inc", bio: "bla bla bla", gender: "Male")
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    
-    
     @IBAction func forgotUsernamePressed() {
-        let alert = UIAlertController(title: "", message: "Пользователь \(user)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Пользователь \(user.login)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.usernameTextField.text = ""
             self.passwordTextField.text = ""
@@ -42,7 +33,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordPressed() {
-        let alert = UIAlertController(title: "", message: "Пароль \(password)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Пароль \(user.password)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.usernameTextField.text = ""
             self.passwordTextField.text = ""
@@ -52,7 +43,7 @@ final class LoginViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTextField.text == user, passwordTextField.text == password else {
+        guard usernameTextField.text == user.login, passwordTextField.text == user.password else {
             let alert = UIAlertController(title: "Ошибка", message: "Неверное имя пользователя или пароль", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -62,18 +53,24 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "welcomeSegue" {
-            if let welcomeVC = segue.destination as? WelcomeViewController {
-                welcomeVC.userName = usernameTextField.text
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewcontrollers = tabBarController.viewControllers else { return }
+        for viewController in viewcontrollers {
+            if let firstVC = viewController as? WelcomeViewController {
+                firstVC.userName = user.login
+                firstVC.creatorName = creator.name
             }
         }
+//        if segue.identifier == "welcomeSegue" {
+//            if let welcomeVC = segue.destination as? WelcomeViewController {
+//                welcomeVC.userName = currentUser?.login
+//            }
+//        }
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
-    
-    
 }
 

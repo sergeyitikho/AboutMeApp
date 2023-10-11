@@ -11,7 +11,11 @@ final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var creatorWelcome: UILabel!
     var userName: String?
+    var creatorName: String?
+    
+    //let creator = Creator(name: "John Doe", age: 66, company: "Limited Inc", bio: "bla bla bla", gender: "Male")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +23,9 @@ final class WelcomeViewController: UIViewController {
         if let name = userName {
             usernameLabel.text = "Привет, \(name)!"
         }
+        if let name = creatorName {
+            creatorWelcome.text = "Меня зовут \(name)!"
+        }
+        //creatorWelcome.text = "Меня зовут \(creator.name)"
     }
 }
