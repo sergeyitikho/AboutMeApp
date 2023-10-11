@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let user = "User"
-    let password = "Password"
+    private let user = "User"
+    private let password = "Password"
     
     
     override func viewDidLoad() {
@@ -33,14 +33,21 @@ class ViewController: UIViewController {
     
     @IBAction func forgotUsernamePressed() {
         let alert = UIAlertController(title: "", message: "Пользователь \(user)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.usernameTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
-        
     }
     
     @IBAction func forgotPasswordPressed() {
         let alert = UIAlertController(title: "", message: "Пароль \(password)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.usernameTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
     
