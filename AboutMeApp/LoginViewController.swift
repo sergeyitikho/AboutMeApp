@@ -11,9 +11,7 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    //private let user = "User"
-    //private let password = "Password"
+ 
     var currentUser: User?
     let user = User(login: "User", password: "Password")
     let creator = Creator(name: "John Doe", age: 66, company: "Limited Inc", bio: "bla bla bla", gender: "Male")
@@ -63,11 +61,6 @@ final class LoginViewController: UIViewController {
                 profileVC.creatorBio = creator.bio
             }
         }
-//        if segue.identifier == "welcomeSegue" {
-//            if let welcomeVC = segue.destination as? WelcomeViewController {
-//                welcomeVC.userName = currentUser?.login
-//            }
-//        }
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {

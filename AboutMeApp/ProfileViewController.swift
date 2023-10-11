@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     @IBOutlet weak var creatorBioLabel: UILabel!
     var creatorBio: String?
