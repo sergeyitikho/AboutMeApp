@@ -59,6 +59,8 @@ final class LoginViewController: UIViewController {
             if let firstVC = viewController as? WelcomeViewController {
                 firstVC.userName = user.login
                 firstVC.creatorName = creator.name
+            } else if let profileVC = viewController as? ProfileViewController {
+                profileVC.creatorBio = creator.bio
             }
         }
 //        if segue.identifier == "welcomeSegue" {
