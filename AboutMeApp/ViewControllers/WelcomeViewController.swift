@@ -12,17 +12,13 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var creatorWelcome: UILabel!
-    var userName: String?
-    var creatorName: String?
+    var user: User!
+    var creator: Creator!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let name = userName {
-            usernameLabel.text = "Привет, \(name)!"
-        }
-        if let name = creatorName {
-            creatorWelcome.text = "Меня зовут \(name)!"
-        }
+        usernameLabel.text = "Привет, \(user.login)!"
+        creatorWelcome.text = "Меня зовут \(creator.name)."
     }
 }

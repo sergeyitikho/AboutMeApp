@@ -12,7 +12,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
  
-    var currentUser: User?
     let user = User(login: "User", password: "Password")
     let creator = Creator(name: "John Doe", age: 66, company: "Limited Inc", bio: "bla bla bla", gender: "Male")
     
@@ -55,11 +54,18 @@ final class LoginViewController: UIViewController {
         guard let viewcontrollers = tabBarController.viewControllers else { return }
         for viewController in viewcontrollers {
             if let firstVC = viewController as? WelcomeViewController {
-                firstVC.userName = user.login
-                firstVC.creatorName = creator.name
-            } else if let profileVC = viewController as? ProfileViewController {
-                profileVC.creatorBio = creator.bio
+                firstVC.user = user
+                firstVC.creator = creator
+            } else if let navigationVC = viewController as? UINavigationController {
+                for viewcontroller in navigationVC.viewControllers {
+                    if let profileVC = viewcontroller as? ProfileViewController {
+                        profileVC.creator = creator
+                    } else if let infoVC = viewcontroller as? InfoViewController {
+                        infoVC.creator = creator
+                    }
+                }
             }
+
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F3C47672AD84EDE007B6992 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C47662AD84EDE007B6992 /* InfoViewController.swift */; };
 		7FB602C92AD7186300ED9423 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB602C82AD7186300ED9423 /* ProfileViewController.swift */; };
 		7FB602CB2AD71C8500ED9423 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB602CA2AD71C8500ED9423 /* UserModel.swift */; };
 		7FCB0CA52AD32C8000BB0C3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB0CA42AD32C8000BB0C3C /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F3C47662AD84EDE007B6992 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7FB602C82AD7186300ED9423 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7FB602CA2AD71C8500ED9423 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7FCB0CA12AD32C8000BB0C3C /* AboutMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 				7FCB0CA82AD32C8000BB0C3C /* LoginViewController.swift */,
 				7FCB0CB82AD3399E00BB0C3C /* WelcomeViewController.swift */,
 				7FB602C82AD7186300ED9423 /* ProfileViewController.swift */,
+				7F3C47662AD84EDE007B6992 /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				7FCB0CA92AD32C8000BB0C3C /* LoginViewController.swift in Sources */,
 				7FCB0CB92AD3399E00BB0C3C /* WelcomeViewController.swift in Sources */,
 				7FB602C92AD7186300ED9423 /* ProfileViewController.swift in Sources */,
+				7F3C47672AD84EDE007B6992 /* InfoViewController.swift in Sources */,
 				7FCB0CA52AD32C8000BB0C3C /* AppDelegate.swift in Sources */,
 				7FB602CB2AD71C8500ED9423 /* UserModel.swift in Sources */,
 				7FCB0CA72AD32C8000BB0C3C /* SceneDelegate.swift in Sources */,

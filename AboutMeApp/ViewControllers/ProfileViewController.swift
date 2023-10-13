@@ -9,13 +9,10 @@ import UIKit
 final class ProfileViewController: UIViewController {
 
     @IBOutlet weak var creatorBioLabel: UILabel!
-    var creatorBio: String?
+    var creator: Creator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let bio = creatorBio {
-            creatorBioLabel.text = "\(bio)!"
-        }
+        creatorBioLabel.text = creator.bio
     }
 }
