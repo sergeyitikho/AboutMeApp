@@ -13,6 +13,10 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        creatorBioLabel.text = creator.bio
+        creatorBioLabel.text = creator?.company ?? "не удалось загрузить данные"
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let userBioVC = segue.destination as? InfoViewController else { return }
+        userBioVC.creator = creator
     }
 }

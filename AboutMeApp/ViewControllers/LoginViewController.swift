@@ -60,9 +60,10 @@ final class LoginViewController: UIViewController {
                 for viewcontroller in navigationVC.viewControllers {
                     if let profileVC = viewcontroller as? ProfileViewController {
                         profileVC.creator = creator
-                    } else if let infoVC = viewcontroller as? InfoViewController {
-                        infoVC.creator = creator
                     }
+//                    else if let infoVC = viewcontroller as? InfoViewController {
+//                        infoVC.creator = creator
+//                    }
                 }
             }
 

@@ -16,6 +16,6 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        companyLabel.text = creator?.company ?? "не удалось загрузить данные"
+        companyLabel.text = creator?.bio ?? "не удалось загрузить данные"
     }
 }
