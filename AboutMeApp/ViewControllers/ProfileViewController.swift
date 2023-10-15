@@ -18,6 +18,7 @@ final class ProfileViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = user.creator.name
         navigationItem.backBarButtonItem = backButton
+        title = user.creator.name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -146,13 +146,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-x0-MbF">
-                                <rect key="frame" x="136.5" y="323.5" width="102.5" height="20.5"/>
+                                <rect key="frame" x="112" y="323.5" width="151" height="20.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WzN-3O-pXd">
-                                        <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="si8-CS-97e">
-                                                <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="si8-CS-97e">
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -160,7 +160,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smk-zn-h4E">
-                                        <rect key="frame" x="61" y="0.0" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="109.5" y="0.0" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -204,11 +204,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-83-iYA">
+                                <rect key="frame" x="94" y="323" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1M2-Lj-40i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JxB-83-iYA" firstAttribute="baseline" secondItem="Yis-xj-g6D" secondAttribute="baseline" id="2O9-Fk-ZHp"/>
                             <constraint firstItem="Yis-xj-g6D" firstAttribute="centerY" secondItem="SpR-kq-zy6" secondAttribute="centerY" id="4UA-71-ZXv"/>
+                            <constraint firstItem="Yis-xj-g6D" firstAttribute="leading" secondItem="JxB-83-iYA" secondAttribute="trailing" constant="43.5" id="OFw-rk-Cgk"/>
                             <constraint firstItem="Yis-xj-g6D" firstAttribute="centerX" secondItem="SpR-kq-zy6" secondAttribute="centerX" id="iwM-3O-1UJ"/>
                         </constraints>
                     </view>
