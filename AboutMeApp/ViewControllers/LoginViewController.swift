@@ -12,8 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
  
-    let user = User(login: "User", password: "Password")
-    let creator = Creator(name: "John Doe", age: 66, company: "Limited Inc", bio: "bla bla bla", gender: "Male")
+    let user = User.getUser()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -50,24 +49,8 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITabBarController else { return }
-        guard let viewcontrollers = tabBarController.viewControllers else { return }
-        for viewController in viewcontrollers {
-            if let firstVC = viewController as? WelcomeViewController {
-                firstVC.user = user
-                firstVC.creator = creator
-            } else if let navigationVC = viewController as? UINavigationController {
-                for viewcontroller in navigationVC.viewControllers {
-                    if let profileVC = viewcontroller as? ProfileViewController {
-                        profileVC.creator = creator
-                    }
-//                    else if let infoVC = viewcontroller as? InfoViewController {
-//                        infoVC.creator = creator
-//                    }
-                }
-            }
-
-        }
+        guard let tabBarController = segue.destination as? TabBarController else { return }
+        tabBarController.user = user
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {

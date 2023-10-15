@@ -9,14 +9,19 @@ import UIKit
 final class ProfileViewController: UIViewController {
 
     @IBOutlet weak var creatorBioLabel: UILabel!
-    var creator: Creator!
+    
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        creatorBioLabel.text = creator?.company ?? "не удалось загрузить данные"
+        creatorBioLabel.text = user.creator.company
+        let backButton = UIBarButtonItem()
+        backButton.title = user.creator.name
+        navigationItem.backBarButtonItem = backButton
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userBioVC = segue.destination as? InfoViewController else { return }
-        userBioVC.creator = creator
+        userBioVC.user = user
     }
 }

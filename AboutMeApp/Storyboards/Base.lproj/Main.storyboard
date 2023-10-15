@@ -224,7 +224,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="h0k-Wh-gKm">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="sRt-rL-fLU" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="sRt-rL-fLU" customClass="TabBarController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K1V-Zz-AIG">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

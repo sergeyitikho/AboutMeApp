@@ -7,15 +7,14 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+final class InfoViewController: UIViewController {
 
     @IBOutlet weak var companyLabel: UILabel!
     
-    var creator: Creator!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        companyLabel.text = creator?.bio ?? "не удалось загрузить данные"
+        companyLabel.text = user.creator.bio
     }
 }
